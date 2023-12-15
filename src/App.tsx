@@ -1,11 +1,11 @@
-import ChartsContainer from "./components/ChartsContainer/ChartsContainer";
+import ChartBox from "./components/chartBox/ChartBox";
 import "./style.scss";
 
 function App() {
 
   return (    
 <div className="main_box">
-<ChartsContainer />
+<ChartBox />
 </div>
 
 )
