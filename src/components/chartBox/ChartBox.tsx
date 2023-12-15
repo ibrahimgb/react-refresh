@@ -18,7 +18,7 @@ type Channel = {
 function ChartBox() {
 
   
-  const [canGenerate, setCanGenerate] = useState(false);
+  const [canGenerate, setCanGenerate] = useState<boolean>(false);
   // the minimal range that the random number generated can retch
   const [minRange, setMinRange] = useState<number>(0);
   // the maximum range that the random number generated can retch
