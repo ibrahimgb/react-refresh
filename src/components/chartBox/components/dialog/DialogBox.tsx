@@ -7,7 +7,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { useState } from 'react';
 import CustomNumberInput from "../CustomInput/CustomInput";
 import "./dialogBox.scss";
-function DialogBox( {open, setOpen , numberOfChannels , setNumberOfChannels, loadSavedData  }) {
+function DialogBox( {open, setOpen , numberOfChannels , setNumberOfChannels, loadSavedData , setLoadData }) {
 
 
   const [numberOfChannelsLocal, setNumberOfChannelsLocal] = useState(numberOfChannels);
@@ -24,7 +24,7 @@ const handleSave = () => {
 
   
 const handleLoadSaved = () => {
-  loadSavedData()
+  loadSavedData();
     setOpen(false);
   };
 

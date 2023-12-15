@@ -10,7 +10,7 @@ import "./inputs.scss";
 
 
 
-function Inputs({minRange , setMinRange , maxRange, setMaxRange , timeInterval , setTimeInterval , setCanGenerate}) {
+function Inputs({minRange , setMinRange , maxRange, setMaxRange , timeInterval , setTimeInterval , setCanGenerate, save }) {
   const [min, setMin] = useState(minRange);
   const [max, setMax] = useState(maxRange);
   const [time, setTime] = useState(timeInterval);
@@ -20,7 +20,10 @@ function Inputs({minRange , setMinRange , maxRange, setMaxRange , timeInterval ,
     setMaxRange(max)
     setTimeInterval(time)
   }
-
+function stop(){
+  setCanGenerate(false)
+  save()
+}
 
   return (
     <>
@@ -28,7 +31,7 @@ function Inputs({minRange , setMinRange , maxRange, setMaxRange , timeInterval ,
 <div className='generate'>
 
 <Button onClick={()=>{setCanGenerate(true)}} >Start</Button>
-          <Button  onClick={()=>{setCanGenerate(false)}}  >Stop</Button>
+          <Button  onClick={()=>{stop()}}  >Stop</Button>
     
 </div>
 
