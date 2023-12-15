@@ -11,6 +11,13 @@
   
 ## Previeau
 
+Initially you can choose to set the number of channels you want or get what is stored previously ( and stored in local storage)
+
+![image](https://github.com/ibrahimgb/react-refresh/assets/59414164/591bab1a-c649-47bc-9b43-937810b3e998)
+
+the user can set the min and max number possible in to generate and the time interval the collar of the chart is generated randomly.
+when you click start it will start generating, and stop will stop it and save the result in to local storage.
+
 ![image](https://github.com/ibrahimgb/react-refresh/assets/59414164/6380f7f3-4e46-4d44-9674-31e2f8d7a570)
 
 
