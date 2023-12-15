@@ -1,6 +1,6 @@
 import { BarChart } from '@mui/x-charts/BarChart';
 function MyBarChart({ index , color, randomNumberList }:{ index: number , color : string, randomNumberList : number[] }) {
-console.log(randomNumberList)
+// console.log(randomNumberList)
 const list = randomNumberList ?? [0]
 
   return (

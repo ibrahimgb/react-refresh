@@ -7,7 +7,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { useState } from 'react';
 import CustomNumberInput from "../CustomInput/CustomInput";
 import "./dialogBox.scss";
-function DialogBox( {open, setOpen , numberOfChannels , setNumberOfChannels, loadSavedData , setLoadData }) {
+function DialogBox( {open, setOpen , numberOfChannels , setNumberOfChannels, loadSavedData  }:
+  {open:boolean, setOpen: (v: boolean) => void , numberOfChannels : number , setNumberOfChannels : (v: number) => void, loadSavedData : () => void }
+
+  ) {
 
 
   const [numberOfChannelsLocal, setNumberOfChannelsLocal] = useState(numberOfChannels);
@@ -16,7 +19,7 @@ function DialogBox( {open, setOpen , numberOfChannels , setNumberOfChannels, loa
     setOpen(true);
   };
 
-
+// change the number of channels in the parent component
 const handleSave = () => {
   setNumberOfChannels(numberOfChannelsLocal)
     setOpen(false);

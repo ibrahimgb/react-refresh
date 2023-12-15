@@ -10,7 +10,9 @@ import "./inputs.scss";
 
 
 
-function Inputs({minRange , setMinRange , maxRange, setMaxRange , timeInterval , setTimeInterval , setCanGenerate, save }) {
+function Inputs({minRange , setMinRange , maxRange, setMaxRange , timeInterval , setTimeInterval , setCanGenerate, save }:
+  {minRange : number , setMinRange : (v: number)=> void , maxRange : number, setMaxRange : (v: number)=> void , timeInterval : number , setTimeInterval : (v: number)=> void , setCanGenerate : (v: boolean)=> void, save : ()=> void }
+  ) {
   const [min, setMin] = useState(minRange);
   const [max, setMax] = useState(maxRange);
   const [time, setTime] = useState(timeInterval);
