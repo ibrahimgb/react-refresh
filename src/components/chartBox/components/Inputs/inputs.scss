@@ -17,6 +17,7 @@ Button{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 1.3rem;
     padding: .5rem;
 }

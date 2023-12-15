@@ -44,6 +44,7 @@ function stop(){
     <Input type="text" value={maxRange} onChange={e=>setMax(parseInt(e.target.value))} name="" id="item" /> */}
     
           </div>
+          <h4>Set time in milliseconds</h4>
      <div className='time_input'>
 
      <CustomNumberInput value = {time} editValue = {setTime} placeHolder = {"Set Time"} />
