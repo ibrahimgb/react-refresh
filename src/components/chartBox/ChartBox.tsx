@@ -37,16 +37,16 @@ const [randomNumberList, setRandomNumberList] = useState<number[][]>([[0],[0]])
 
  useEffect(() => {
       let intervalId : number;
-  
       if (canGenerate) {
         // Set up an interval to update the random number every 1000 milliseconds (1 second)
         intervalId = setInterval(() => {
 
-          const newRandomNumberList = 
-
           setChannels((prevChannels)=>prevChannels.map((channel)=>{
-            console.log("newRandomNumberList")
-          console.log(channel)
+
+          if (channel.data[0] === 0 && channel.data.length === 1){
+            return {...channel, data: [ Math.floor(Math.random() * (maxRange - minRange + 1)) + minRange ]}
+          }
+
             return {...channel, data: [...channel.data, Math.floor(Math.random() * (maxRange - minRange + 1)) + minRange ]}}))
           // setTest(()=>[...test, 3])
 
@@ -55,6 +55,7 @@ const [randomNumberList, setRandomNumberList] = useState<number[][]>([[0],[0]])
       // Clean up the interval when the component is unmounted or when canGenerate is set to false
       return () => clearInterval(intervalId);
     }, [canGenerate]);
+
 
   // To set the number of channels
 
@@ -88,7 +89,7 @@ setChannels(()=>{
   const defaultChannel : Channel[] = [{
     index : 0,
     color : "#000000",
-    data:[0]
+    data:[-1]
   }]
   
   return JSON.parse(localStorage.getItem('CHANNELS') ?? "")?? defaultChannel});
@@ -100,7 +101,7 @@ console.log("yes?")
 console.log(channels)
 
   return (
-<>
+<div className='box'>
 {/* {channels[0].data} */}
     <DialogBox setLoadData={setLoadData} loadSavedData={loadSavedData} numberOfChannels={numberOfChannels} setNumberOfChannels={setNumberOfChannels} open={open} setOpen={setOpen} setNumberOfChannels={setNumberOfChannels} />
     <Box sx={{ width: '100%' }}>
@@ -114,7 +115,7 @@ console.log(channels)
       <Inputs save = {save} minRange={minRange} setMinRange={setMinRange} maxRange={maxRange} setMaxRange={setMaxRange} timeInterval={timeInterval} setTimeInterval={setTimeInterval} setCanGenerate={setCanGenerate} />
 </div>
     </Box>
-</>
+</div>
   );
 }
 
