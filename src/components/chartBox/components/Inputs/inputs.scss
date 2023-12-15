@@ -1,19 +1,22 @@
-Button{
+Button {
     width: 7rem;
 }
-.generate{
+
+.generate {
     display: flex;
     gap: 3rem;
-    
+
 }
-.range_input{
+
+.range_input {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
     padding: .5rem;
 }
-.time_input{
+
+.time_input {
     display: flex;
     align-items: center;
     justify-content: center;
